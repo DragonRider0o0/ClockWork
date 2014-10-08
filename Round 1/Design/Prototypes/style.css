@@ -1,0 +1,30 @@
+body
+{
+	background-color: #000000;
+	text-align: center;
+}
+
+div
+{
+	display: block;
+}
+
+h2
+{
+	color: #FFFFFF;
+}
+
+#documentTitle
+{
+	display: none;
+}
+
+#documentMetadata
+{
+	display: none;
+}
+
+.page
+{
+	margin-bottom: 200px;
+}
