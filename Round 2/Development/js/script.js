@@ -10,7 +10,7 @@
 	var latitudeId = "formLatitude";
 	var longitudeId = "formLongitude";
 	var notesId = "formNotes";
-	var location;
+	var userLocation;
 
 $(document).ready(function()
 {
@@ -87,20 +87,29 @@ $(document).ready(function()
 	
 	if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getPosition);
-		//console.log(location);
     }
-	// Get and set latitude
-	//var latitudeField = $("#" + latitudeId);
-	//latitudeField;ield.val()
-	//console.log(startTime, stopTime);
+	
+	// Get and set notes
+	var notesField = $("#" + notesId);
+	notesField.val("I'm a note");
+	
+	setTimeout(function(){$("#ss-submit").click();}, 5000);
+	
 });
 
 function getPosition(position) 
 {
-    console.log(location);
-	location = { 'latitude': position.coords.latitude, 'longitude': position.coords.longitude};
-    
-	return location;
+	userLocation = { 'latitude': position.coords.latitude, 'longitude': position.coords.longitude};
+	var latitude = userLocation.latitude;
+	var longitude = userLocation.longitude;
+	
+	// Get and set latitude
+	var latitudeField = $("#" + latitudeId);
+	latitudeField.val(latitude);
+	
+	// Get and set longitude
+	var longitudeField = $("#" + longitudeId);
+	longitudeField.val(longitude);
 }
 
 		
